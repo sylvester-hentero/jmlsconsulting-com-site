@@ -1,0 +1,7 @@
+name = "jmlsconsulting-com-site"
+pages_build_output_dir = "."
+compatibility_date = "2026-09-24"
+
+[[services]]
+binding = "EMAIL_WORKER"
+service = "jmlsconsulting-email-worker"
