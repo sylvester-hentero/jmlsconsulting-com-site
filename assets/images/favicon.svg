@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JMLS Consulting Inc.">
+  <rect width="64" height="64" rx="12" fill="#04243A"/>
+  <rect x="3" y="3" width="58" height="58" rx="9.5" fill="none" stroke="#C5853B" stroke-width="1.5" stroke-opacity="0.65"/>
+  <path d="M18 20h10v20c0 4.5-3.2 7.5-7.8 7.5-2.6 0-4.6-.8-6.2-2.2l2.2-3.2c1 .9 2.2 1.5 3.6 1.5 2.2 0 3.6-1.4 3.6-3.8V24H18v-4zm16 0h4.4l5.6 14.5L49.6 20H54v27h-4.2V28.8L45 41.2h-2l-4.8-12.4V47H34V20z" fill="#FFFFFF"/>
+  <line x1="16" y1="52" x2="48" y2="52" stroke="#C5853B" stroke-width="2" stroke-linecap="round"/>
+</svg>
