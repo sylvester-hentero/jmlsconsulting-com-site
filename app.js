@@ -25,6 +25,14 @@
   if (header && headerInner && siteMenu) {
     let lastHeaderWidth = 0;
 
+    const isPopoverOpen = (el) => {
+      try {
+        return el.matches(':is(:popover-open, .\\:popover-open)');
+      } catch (_) {
+        return el.classList.contains(':popover-open');
+      }
+    };
+
     const updateNavLayout = () => {
       const currentHeaderWidth = header.clientWidth;
       const isCurrentlyWide = header.classList.contains('is-wide');
@@ -36,7 +44,7 @@
       }
       lastHeaderWidth = currentHeaderWidth;
 
-      const wasOpen = siteMenu.matches(':is(:popover-open, .\\:popover-open)');
+      const wasOpen = isPopoverOpen(siteMenu);
 
       header.classList.add('is-measuring', 'is-wide');
       siteMenu.removeAttribute('popover');
@@ -70,6 +78,18 @@
     navObserver.observe(header);
     navObserver.observe(siteMenu);
     updateNavLayout();
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        lastHeaderWidth = 0;
+        updateNavLayout();
+      });
+    }
+
+    window.addEventListener('orientationchange', () => {
+      lastHeaderWidth = 0;
+      requestAnimationFrame(updateNavLayout);
+    });
 
     // Close collapsed popover menu when an anchor link is activated
     siteMenu.addEventListener('click', (event) => {
